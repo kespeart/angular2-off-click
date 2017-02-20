@@ -1,6 +1,6 @@
 {
   "name": "angular2-off-click",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "off click directive for angular2",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
@@ -11,6 +11,22 @@
     "release": "gulp release"
   },
   "license": "MIT",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kespeart/angular2-off-click.git"
+  },
+  "keywords": [
+    "angular2",
+    "ng2",
+    "aot",
+    "angular",
+    "off",
+    "click",
+    "directive"
+  ],
+  "author": "Kes Peart",
+  "homepage": "https://github.com/kespeart/angular2-off-click#readme",
   "devDependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
