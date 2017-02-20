@@ -1,0 +1,13 @@
+<main layout-row class="main">
+    <div class="offclick one" (offClick)="offClick($event, 1)" [ngClass]="{'color1': offClick1, 'color2': !offClick1}">
+        <p>Click off to change color</p>
+    </div>
+
+    <div class="offclick two" (offClick)="offClick($event, 2)" [ngClass]="{'color1': offClick2, 'color2': !offClick2}">
+        <p>Click off to change color</p>
+
+        <div class="offclick three" (offClick)="offClick($event, 3)" [ngClass]="{'color1': offClick3, 'color2': !offClick3}">
+            <p>Off Click inside an off click. click off to change color</p>
+        </div>
+    </div>
+</main>
