@@ -9,9 +9,9 @@ var OffClickDirective = (function () {
         this.baseElement = this.el.nativeElement;
         this.documentBodyElement = document.body;
         this.subscription = rxjs_1.Observable.fromEvent(document, 'click')
-            .subscribe(function (event) { return _this.isOffClick(event.srcElement, event); });
+            .subscribe(function (event) { return _this.clickHandler(event.srcElement, event); });
     }
-    OffClickDirective.prototype.isOffClick = function (currentElement, event) {
+    OffClickDirective.prototype.clickHandler = function (currentElement, event) {
         if (currentElement === this.documentBodyElement || currentElement == null) {
             this.offClick.emit(event);
             return;
@@ -19,7 +19,7 @@ var OffClickDirective = (function () {
         if (currentElement === this.baseElement) {
             return;
         }
-        this.isOffClick(currentElement.parentElement, event);
+        this.clickHandler(currentElement.parentElement, event);
     };
     OffClickDirective.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();

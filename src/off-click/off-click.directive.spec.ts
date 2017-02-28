@@ -23,7 +23,7 @@ describe('off click unit test', () => {
         mainElement = fixture.debugElement.queryAll(By.css('main'));
     });
 
-    it('should emit an event when the user click outside the directive element click', () => {
+    it('should emit an event when the user clicks outside the directive element', () => {
         let event: Event = null;
         let dir: OffClickDirective = des[1].injector.get(OffClickDirective) as OffClickDirective;
         dir.offClick.subscribe((_event: Event) => event = _event);
@@ -32,7 +32,7 @@ describe('off click unit test', () => {
         expect(typeof event.stopPropagation).toEqual('function');
     });
 
-    it('should not emit an event when the user click on the element', () => {
+    it('should not emit an event when the user clicks on the element', () => {
         let event: Event = null;
         let dir: OffClickDirective = des[0].injector.get(OffClickDirective) as OffClickDirective;
         dir.offClick.subscribe((_event: Event) => event = _event);

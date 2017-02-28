@@ -6,6 +6,6 @@ export declare class OffClickDirective implements OnDestroy {
     private documentBodyElement;
     private baseElement;
     constructor(el: ElementRef);
-    private isOffClick(currentElement, event);
+    private clickHandler(currentElement, event);
     ngOnDestroy(): void;
 }

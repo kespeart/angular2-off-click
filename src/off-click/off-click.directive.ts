@@ -14,20 +14,19 @@ export class OffClickDirective implements OnDestroy {
         this.baseElement = this.el.nativeElement;
         this.documentBodyElement = document.body;
         this.subscription = Observable.fromEvent(document, 'click')
-                                      .subscribe( (event: Event) => this.isOffClick(event.srcElement, event) )
+                                      .subscribe( (event: Event) => this.clickHandler(event.srcElement, event) )
     }
 
-    private isOffClick(currentElement: HTMLElement | Element, event: Event): void {
+    private clickHandler(currentElement: HTMLElement | Element, event: Event): void {
 
         if(currentElement === this.documentBodyElement || currentElement == null) {
             this.offClick.emit(event);
             return;
         }
-
         if(currentElement === this.baseElement){
             return;
         }
-        this.isOffClick(currentElement.parentElement, event);
+        this.clickHandler(currentElement.parentElement, event);
     }
 
 
